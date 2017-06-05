@@ -2,16 +2,27 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = () => {
+const allbeers = () => {
+  console.log('all beers beer api store.user: ', store.user)
   return $.ajax({
     url: config.apiOrigin + '/beers',
     method: 'GET'
-//    headers: {
-//      Authorization: 'Token token=' + store.user.token
-//    }
+  })
+}
+
+const index = () => {
+  console.log('show beer api store.user: ', store.user)
+  return $.ajax({
+    url: config.apiOrigin + '/beers',
+    method: 'GET',
+    data: {},
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
 module.exports = {
-  index
+  index,
+  allbeers
 }

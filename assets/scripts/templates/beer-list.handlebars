@@ -1,21 +1,18 @@
 {{#each beers as |beer|}}
 <div class="beerList">
 <table class="table table-bordered tablebilling">
-  <thead class="thead-inverse">
     <tr>
       <th>Brew</th>
       <th>Brewery</th>
       <th>Style</th>
       <th>Description</th>
     </tr>
-  </thead>
-  <tbody>
     <tr>
       <td>{{beer.beer}}</td>
       <td>{{brewery}}</td>
       <td>{{style}}</td>
       <td>{{description}}</td>
-    </tbody>
+    </tr>
   </table>
 </div>
 {{else}}
