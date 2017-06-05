@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>What's on tap?</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags unless you know what you are doing -->
@@ -11,15 +11,130 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
-
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+    <body class="container-fluid col-md-12">
+      <h1>What's on tap?<span> Boston</span></h1>
+      <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+      <a class="navbar-brand" href="#">What's on tap? Boston</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- ***** start of login / sign-up drop down in NAV **** -->
+      <ul class="nav navbar-nav">
+        <li class="dropdown account">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Brewers Sign In</b><span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row sign-in">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-in">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign-In</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Dont have an account? <a href="#" class="linkSignUp"><b>Sign-Up</b></a>
+                </div>
+              </div>
+              <!-- END of SIGN-IN -->
+              <!-- Start of Sign-UP -->
+              <div class="row sign-up">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
+                      <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Already have an account? <a href="#" class="linkSignIn"><b>Sign-In</b></a>
+                </div>
+              </div>
+              <!-- End of Sign-up -->
+              <!-- start of Singout -->
+              <div class="row sign-out">
+                <div class="col-md-12">
+                  <div class="bottom text-center">
+                    <button type="button" class="linkChangePassword btn btn-primary btn-block">Change Password</button>
+                  </div>
+                  <div class="bottom text-center">
+                    <button type="button" class="btn btn-primary btn-block" id="order-button">Order History</button>
+                  </div>
+                  <div class="bottom text-center">
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
+                      <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- end of Sign-out -->
+              <!-- Start of change password -->
+              <div class="row change-password">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="change-password">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Old Password</label>
+                      <input type="password" name="passwords[old]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">New Password</label>
+                      <input type="password" name="passwords[new]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">change-password</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Want to go back? <a href="#" class="linkAccount"><b>Account Menu</b></a>
+                </div>
+              </div>
+              <!-- End of change password -->
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /.navbar-collapse -->
+    </div>
+  </div>
+  <!-- end of DIV container -->
+</nav>
+<!--list of beers for not logged in-->
+      <section class="list of beers" id="beers">
+      </section>
+<!--update view for brewers that are logged in-->
+      <section class="brewers view" id="brewers">
+      </section>
+    <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers</button>
     </body>
 </html>

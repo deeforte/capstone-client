@@ -1,2 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+
+body {
+  font-family: fantasy;
+  color: white;
+}
+
+header {
+  height: 50px;
+  color: brown;
+  font-size: 20px;
+  text-align: center;
+  margin: 5px;
+}
+
+.container-fluid {
+  background: url('http://i.imgur.com/xaSma9g.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+}
