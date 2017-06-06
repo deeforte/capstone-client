@@ -22,6 +22,18 @@ const mybeers = () => {
   })
 }
 
+const getBeer = (beerId) => {
+  console.log('get beer api store.user: ', store.user)
+  return $.ajax({
+    url: config.apiOrigin + '/beers/' + beerId,
+    method: 'GET',
+    data: {},
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const create = function (addBeer) {
   return $.ajax({
     url: config.apiOrigin + '/beers',
@@ -51,5 +63,6 @@ module.exports = {
   index,
   mybeers,
   create,
-  destroy
+  destroy,
+  getBeer
 }

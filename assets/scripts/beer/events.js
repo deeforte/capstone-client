@@ -45,6 +45,26 @@ const updateBeer = function (event) {
   const data = event.target.id.split('-')
   const beerId = data[2]
   console.log('beerId: ', beerId)
+  console.log('do i have object', event.target)
+  console.log('can I see store.beers: ', store.beers[data[3]])
+  const beerUp = store.beers[data[3]]
+  console.log('beerUp is: ', beerUp)
+  console.log('beerUp.city is: ', beerUp.city)
+  $('#beer-id').val(beerUp.id)
+  $('#beer-city').val(beerUp.city)
+  $('#beer-beer').val(beerUp.beer)
+  $('#beer-brewery').val(beerUp.brewery)
+  $('#beer-style').val(beerUp.style)
+  $('#beer-description').val(beerUp.description)
+  $('#upModal').modal('show')
+  // beerApi.getBeer(beerId)
+  // .then(beerUi.getBeerSuccess)
+  // .catch(beerUi.getBeerFailure)
+  // console.log('store.beer: ', store.beer)
+}
+
+const patchBeer = function (event) {
+  console.log('in patch beer')
 }
 
 const addBeer = function (event) {
@@ -64,6 +84,7 @@ const addHandlers = () => {
   $('#brewer-button').on('click', showBeers)
 //  $('#delete').on('click', deleteBeer)
 //  $('#add').on('click', addBeer)
+  $('.form-updateBeer').on('submit', patchBeer)
   $('.form-addBeer').on('submit', addBeer)
 //  $('.form-delete-beer').on('submit', deleteBeer)
   $(document).on('click', '.btn-update-beer', updateBeer)
@@ -77,5 +98,6 @@ module.exports = {
   showBeers,
   deleteBeer,
   updateBeer,
-  addBeer
+  addBeer,
+  patchBeer
 }

@@ -38,6 +38,24 @@ const showBeersFailure = (error) => {
   console.log(error)
 }
 
+const getBeerSuccess = (data) => {
+  store.beer = data
+  console.log('in ui store.beer: ', store.beer)
+  // const showBeersHTML = showBeersTemplate({
+  //   beers: data.beers
+  // })
+  console.log('data beers is: ', data)
+  console.log('beer ui store.user: ', store.user)
+  // $('#beers').empty()
+  // $('#beers').append(showBeersHTML)
+  // $('#landing').hide()
+  // $('#beer').show()
+}
+
+const getBeerFailure = (error) => {
+  console.log(error)
+}
+
 const newBeerSuccess = (beer) => {
   store.beer = beer
   $('#addModal').modal('toggle')
@@ -64,5 +82,7 @@ module.exports = {
   newBeerSuccess,
   newBeerFailure,
   deleteBeerSuccess,
-  deleteBeerFailure
+  deleteBeerFailure,
+  getBeerSuccess,
+  getBeerFailure
 }

@@ -10,14 +10,14 @@
       <th>Actions</th>
     </tr>
   </thead>
-  {{#each brewers as |beer|}}
+  {{#each brewers as |beer index|}}
   <tbody>
     <tr>
       <td>{{beer.beer}}</td>
       <td>{{brewery}}</td>
       <td>{{style}}</td>
       <td>{{description}}</td>
-      <td><button type="button" id="btn-update-{{this.id}}" class="btn btn-small btn-primary btn-submit-fix btn-update-beer">Update</button>
+      <td><button type="button" id="btn-update-{{this.id}}-{{index}}" class="btn btn-small btn-primary btn-submit-fix btn-update-beer">Update</button>
       <!--form class="form-delete-beer" -->
         <button type="button" id="btn-delete-{{this.id}}" class="btn btn-small btn-primary btn-submit-fix btn-delete-beer">Remove</button></td>
       <!--/form-->
