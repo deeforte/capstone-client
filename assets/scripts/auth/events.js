@@ -4,7 +4,7 @@
 const userApi = require('./api.js')
 const userUi = require('./ui.js')
 const getFormFields = require('../../../lib/get-form-fields')
-const store = require('../store')
+// const store = require('../store')
 
 const onSignIn = function (event) {
   const data = getFormFields(this)

@@ -38,9 +38,21 @@ const showBeersFailure = (error) => {
   console.log(error)
 }
 
+const newBeerSuccess = (beer) => {
+  store.beer = beer
+  $('#addModal').modal('toggle')
+  $('.form-addBeer').trigger('reset')
+}
+
+const newBeerFailure = (beer) => {
+//  console.log('create bombed')
+}
+
 module.exports = {
   getBeersSuccess,
   getBeersFailure,
   showBeersSuccess,
-  showBeersFailure
+  showBeersFailure,
+  newBeerSuccess,
+  newBeerFailure
 }

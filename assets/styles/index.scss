@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   font-family: fantasy;
-  color: white;
+  color: black;
 }
 
 header {
@@ -20,4 +20,8 @@ header {
   background-size: cover;
   background-repeat: no-repeat;
   height: 600px;
+}
+
+.section {
+  color: white;
 }

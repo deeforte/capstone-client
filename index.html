@@ -136,42 +136,44 @@
       <section class="brewers view" id="brewers">
       </section>
     <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers</button>
+<!--modals start here-->
+<!--upmodal start here-->
     <div id="upModal" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">update yarn</h4>
+            <h4 class="modal-title">update beer</h4>
           </div>
           <div class="modal-body">
-            <p>Update your yarn info here.</p>
-            <form class="form-updateYarn">
+            <p>Update your beer info here.</p>
+            <form class="form-updateBeer">
             <div class="form-group">
               <div class="form-group">
-                <label class="sr-only" for="pwd">yarn quantity</label>
-                <input type="number" name="yarn[id]" class="yarn-id" placeholder="id">
+                <label class="sr-only" for="pwd">beer id</label>
+                <input type="number" name="beer[id]" class="beer-id" placeholder="id">
               </div>
-              <label class="sr-only" for="email">yarn name</label>
-              <input type="text" name="yarn[name]" class="yarn-name" placeholder="name">
+              <label class="sr-only" for="email">beer name</label>
+              <input type="text" name="beer[name]" class="beer-name" placeholder="name">
             </div>
             <div class="form-group">
-              <label class="sr-only" for="pwd">yarn quantity</label>
-              <input type="number" name="yarn[quantity]" class="yarn-quantity" placeholder="quantity">
+              <label class="sr-only" for="pwd">beer quantity</label>
+              <input type="number" name="beer[quantity]" class="beer-quantity" placeholder="quantity">
             </div>
             <div class="form-group">
-              <label class="sr-only" for="email">yarn length</label>
-              <input type="number" name="yarn[yards]" class="yarn-length" placeholder="yards">
+              <label class="sr-only" for="email">beer length</label>
+              <input type="number" name="beer[yards]" class="beer-length" placeholder="yards">
             </div>
             <div class="form-group">
-              <label class="sr-only" for="pwd">yarn color</label>
-              <input type="text" name="yarn[color]" class="yarn-color" placeholder="color">
+              <label class="sr-only" for="pwd">beer color</label>
+              <input type="text" name="beer[color]" class="beer-color" placeholder="color">
             </div>
             <div class="form-group">
               <label class="sr-only" for="pwd">project</label>
-              <input type="text" name="yarn[project]" class="yarn-project" placeholder="project">
+              <input type="text" name="beer[project]" class="beer-project" placeholder="project">
             </div>
-            <button type="submit" class="btn btn-default add-yarn">update yarn</button>
+            <button type="submit" class="btn btn-default add-beer">update beer</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -181,6 +183,49 @@
         </div>
       </div>
     </div>
+<!--- up modal ends here-->
+<!--- add modal ends here-->
+<div id="addModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">add beer</h4>
+      </div>
+      <div class="modal-body">
+        <p>Add your beer info here.</p>
+        <form class="form-addBeer">
+        <div class="form-group">
+          <label class="sr-only" for="email">beer city</label>
+          <input type="text" name="beer[city]" class="beer-city" placeholder="city">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">beer name</label>
+          <input type="text" name="beer[beer]" class="beer-beer" placeholder="name">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="email">beer brewery</label>
+          <input type="text" name="beer[brewery]" class="beer-brewery" placeholder="brewery">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">beer style</label>
+          <input type="text" name="beer[style]" class="beer-style" placeholder="style">
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="pwd">description</label>
+          <input type="text" name="beer[description]" class="beer-description" placeholder="description">
+        </div>
+        <button type="submit" class="btn btn-default add-beer">add beer</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+    <!--- modal content ends-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
+<!---addmodal ends here-->
     </body>
 </html>
