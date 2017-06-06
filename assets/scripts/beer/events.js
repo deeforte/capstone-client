@@ -19,25 +19,41 @@ const showBeers = function () {
   beerApi.mybeers()
   .then(beerUi.showBeersSuccess)
   .catch(beerUi.showBeersFailure)
-//  $('#delete').on('click', deleteBeer(this))
-  $('.delete').on('click', function () {
-    deleteBeer(this)
-  })
 }
 
 const hideBeers = function () {
   console.log('in hide beers')
   $('#beer').hide()
 }
-const deleteBeer = function (delButton) {
+const deleteBeer = function (event) {
+  event.preventDefault()
+  console.log('event target id: ' + event.target.id)
   console.log('hit delete beer button')
+  const data = event.target.id.split('-')
+  const beerId = data[2]
+  console.log('beerId: ', beerId)
+  beerApi.destroy(beerId)
+    .then(beerUi.deleteBeerSuccess)
+    .then(showBeers)
+    .catch(beerUi.deleteBeerFailure)
 }
+
+const updateBeer = function (event) {
+  event.preventDefault()
+  console.log('event target id: ' + event.target.id)
+  console.log('hit update beer button')
+  const data = event.target.id.split('-')
+  const beerId = data[2]
+  console.log('beerId: ', beerId)
+}
+
 const addBeer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('hit add beer button')
   beerApi.create(data)
   .then(beerUi.addBeerSuccess)
+  .then(showBeers)
   .catch(beerUi.addBeerFailure)
 }
 
@@ -49,7 +65,9 @@ const addHandlers = () => {
 //  $('#delete').on('click', deleteBeer)
 //  $('#add').on('click', addBeer)
   $('.form-addBeer').on('submit', addBeer)
-  $('.form-delete-beer').on('submit', deleteBeer)
+//  $('.form-delete-beer').on('submit', deleteBeer)
+  $(document).on('click', '.btn-update-beer', updateBeer)
+  $(document).on('click', '.btn-delete-beer', deleteBeer)
 }
 
 module.exports = {
@@ -58,5 +76,6 @@ module.exports = {
   hideBeers,
   showBeers,
   deleteBeer,
+  updateBeer,
   addBeer
 }

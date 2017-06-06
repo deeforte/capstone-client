@@ -18,19 +18,14 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                  </button>
-      <a class="navbar-brand" href="#">What's on tap? Boston</a>
+      <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers In Boston</button>
+      <a class="navbar-brand" href="#">What's on tap?</a>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <!-- ***** start of login / sign-up drop down in NAV **** -->
       <ul class="nav navbar-nav">
-        <li class="dropdown account">
+        <li class="brewer dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Brewers actions</b><span class="caret"></span></a>
           <ul id="login-dp" class="dropdown-menu">
             <li>
@@ -129,13 +124,19 @@
   </div>
   <!-- end of DIV container -->
 </nav>
+<div class="container">
 <!--list of beers for not logged in-->
+<div>
       <section class="list of beers" id="beers">
       </section>
 <!--update view for brewers that are logged in-->
       <section class="brewers view" id="brewers">
       </section>
+</div>
+  <div>
     <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers</button>
+  </div>
+</div>
 <!--modals start here-->
 <!--upmodal start here-->
     <div id="upModal" class="modal fade" role="dialog">

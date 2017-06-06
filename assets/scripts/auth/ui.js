@@ -10,6 +10,7 @@ const signInSuccess = (data) => {
   $('.sign-out').show()
   $('.dropdown-menu').trigger('click')
   $('#welcome').modal('show')
+  console.log(store.user)
 }
 
 const signInFailure = () => {

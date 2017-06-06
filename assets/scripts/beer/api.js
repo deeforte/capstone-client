@@ -33,8 +33,23 @@ const create = function (addBeer) {
   })
 }
 
+const destroy = function (beerId) {
+//  console.log(updatedID)
+//  console.log(store)
+//  console.log(updatedYarn)
+  return $.ajax({
+//    url: 'http://localhost:4741/beers/' + beerDelId,
+    url: config.apiOrigin + '/beers/' + beerId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   index,
   mybeers,
-  create
+  create,
+  destroy
 }

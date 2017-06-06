@@ -1,8 +1,7 @@
-{{#each brewers as |beer|}}
 <div class="brewerList">
 <h3>{{brewery}} brewery</h3>
-<table class="table table-bordered tablebilling">
-  <thead class="thead-inverse">
+<table class="table table-bordered">
+  <thead>
     <tr>
       <th>Brew</th>
       <th>Brewery</th>
@@ -11,23 +10,23 @@
       <th>Actions</th>
     </tr>
   </thead>
+  {{#each brewers as |beer|}}
   <tbody>
     <tr>
       <td>{{beer.beer}}</td>
       <td>{{brewery}}</td>
       <td>{{style}}</td>
       <td>{{description}}</td>
-      <td><button type="button" id="update" class="btn btn-small btn-primary btn-submit-fix">Update</button>
-      <form class="form-delete-beer">
-        <button type="button" id="delete" class="btn btn-small btn-primary btn-submit-fix">Delete</button></li></td>
-      </form>
+      <td><button type="button" id="btn-update-{{this.id}}" class="btn btn-small btn-primary btn-submit-fix btn-update-beer">Update</button>
+      <!--form class="form-delete-beer" -->
+        <button type="button" id="btn-delete-{{this.id}}" class="btn btn-small btn-primary btn-submit-fix btn-delete-beer">Remove</button></td>
+      <!--/form-->
      </tr>
     </tbody>
+  {{/each}}
   </table>
 </div>
-{{else}}
-<h2 class="text-center">No local brews on tap.</h2>
-{{/each}}
+
 <form class="add-beer">
     <button type="button" id="add" class="btn btn-small btn-primary btn-submit-fix" data-toggle="modal" data-target="#addModal">Add a brew</button>
 </form>

@@ -47,6 +47,14 @@ const newBeerSuccess = (beer) => {
 const newBeerFailure = (beer) => {
 //  console.log('create bombed')
 }
+const deleteBeerSuccess = (beer) => {
+//  console.log('delete beer success ran data is ', beer)
+//  console.log(store.beer)
+}
+
+const deleteBeerFailure = (beer) => {
+//  console.log('delete bombed')
+}
 
 module.exports = {
   getBeersSuccess,
@@ -54,5 +62,7 @@ module.exports = {
   showBeersSuccess,
   showBeersFailure,
   newBeerSuccess,
-  newBeerFailure
+  newBeerFailure,
+  deleteBeerSuccess,
+  deleteBeerFailure
 }
