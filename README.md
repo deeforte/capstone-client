@@ -11,10 +11,10 @@ Deployed API https://shrouded-waters-11972.herokuapp.com/
 ## Screenshot of the app
 
 Public list of local craft brews view
-![alt text]()
+![alt text](http://i.imgur.com/cFzqxEY.png)
 
 Brewer's manage their craft beers view
-![alt text]()
+![alt text](http://i.imgur.com/2hLR1xf.png)
 
 
 ## Technologies used
