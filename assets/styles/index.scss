@@ -4,7 +4,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 body {
   font-family: fantasy;
-  color: black;
+  color: white;
 }
 
 header {
@@ -37,4 +37,8 @@ header {
 
 #show-beers {
   float: right;
+}
+
+.modal-content {
+  color: black;
 }

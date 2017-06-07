@@ -45,6 +45,17 @@ const create = function (addBeer) {
   })
 }
 
+const update = function (upBeer) {
+  return $.ajax({
+    url: config.apiOrigin + '/beers/' + upBeer.beer.id,
+    method: 'PATCH',
+    data: upBeer,
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const destroy = function (beerId) {
 //  console.log(updatedID)
 //  console.log(store)
@@ -64,5 +75,6 @@ module.exports = {
   mybeers,
   create,
   destroy,
-  getBeer
+  getBeer,
+  update
 }

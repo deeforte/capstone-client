@@ -3,6 +3,7 @@
 // const setAPIOrigin = require('../../../lib/set-api-origin')
 const userApi = require('./api.js')
 const userUi = require('./ui.js')
+const beerEvents = require('../beer/events')
 const getFormFields = require('../../../lib/get-form-fields')
 // const store = require('../store')
 
@@ -11,6 +12,7 @@ const onSignIn = function (event) {
   event.preventDefault()
   userApi.signIn(data)
     .then(userUi.signInSuccess)
+    .then(beerEvents.showBeers)
     .catch(userUi.signInFailure)
 }
 const addHandlers = () => {

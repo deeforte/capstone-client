@@ -64,7 +64,13 @@ const updateBeer = function (event) {
 }
 
 const patchBeer = function (event) {
-  console.log('in patch beer')
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('in patch beer data', data)
+  beerApi.update(data)
+  .then(beerUi.updateBeerSuccess)
+  .then(showBeers)
+  .catch(beerUi.updateBeerFailure)
 }
 
 const addBeer = function (event) {

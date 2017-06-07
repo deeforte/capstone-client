@@ -10,6 +10,7 @@ const getBeersSuccess = (data) => {
   })
   console.log('data beers is: ', data.beers)
   console.log('beer ui store.user: ', store.user)
+  $('#brewers').empty()
   $('#beers').empty()
   $('#beers').append(showBeersHTML)
   // $('#landing').hide()
@@ -59,10 +60,21 @@ const getBeerFailure = (error) => {
 const newBeerSuccess = (beer) => {
   store.beer = beer
   $('#addModal').modal('toggle')
+  $('#addModal').modal('hide')
   $('.form-addBeer').trigger('reset')
 }
 
 const newBeerFailure = (beer) => {
+//  console.log('create bombed')
+}
+const updateBeerSuccess = (beer) => {
+  store.beer = beer
+  $('#upModal').modal('toggle')
+  $('#upModal').modal('hide')
+  $('.form-updateBeer').trigger('reset')
+}
+
+const updateBeerFailure = (beer) => {
 //  console.log('create bombed')
 }
 const deleteBeerSuccess = (beer) => {
@@ -81,6 +93,8 @@ module.exports = {
   showBeersFailure,
   newBeerSuccess,
   newBeerFailure,
+  updateBeerSuccess,
+  updateBeerFailure,
   deleteBeerSuccess,
   deleteBeerFailure,
   getBeerSuccess,
