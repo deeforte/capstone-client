@@ -32,6 +32,8 @@ const signOutSuccess = (data) => {
   $('.sign-in').show()
   $('.sign-out').hide()
   store.user = {}
+  $('#beers').empty()
+  $('#brewers').empty()
 }
 
 const signOutFailure = () => {
