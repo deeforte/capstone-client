@@ -34,6 +34,7 @@ const signOutSuccess = (data) => {
   store.user = {}
   $('#beers').empty()
   $('#brewers').empty()
+  $('.form-addBeer').trigger('reset')
 }
 
 const signOutFailure = () => {

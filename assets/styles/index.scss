@@ -1,6 +1,9 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: fantasy;
@@ -17,10 +20,9 @@ header {
 }
 
 .container-fluid {
-  background: url('http://i.imgur.com/xaSma9g.jpg');
+  background: url('http://i.imgur.com/q8Tm9zq.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  height: 600px;
 }
 
 .container {
@@ -51,6 +53,9 @@ header {
   margin-right: 4%;
 }
 .modal-content {
+  color: black;
+}
+.bottom {
   color: black;
 }
 @media(max-width:768px){

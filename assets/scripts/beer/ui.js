@@ -60,7 +60,6 @@ const getBeerFailure = (error) => {
 const newBeerSuccess = (beer) => {
   store.beer = beer
   $('#addModal').modal('toggle')
-  $('#addModal').modal('hide')
   $('.form-addBeer').trigger('reset')
 }
 
