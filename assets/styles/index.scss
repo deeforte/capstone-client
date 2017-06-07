@@ -5,6 +5,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 body {
   font-family: fantasy;
   color: white;
+  padding: 100px;
 }
 
 header {
@@ -28,17 +29,37 @@ header {
 
 .section {
   color: white;
+  padding: 10px;
 }
 
 .tablebeers {
-  margin: 0 auto;
+  margin: 10 auto;
+  padding: 10;
   overflow: auto;
 }
 
-#show-beers {
-  float: right;
+.navbar-collapse {
+  float: right
 }
 
+.navbar-brand {
+  color: white;
+}
+
+.navbar {
+  float: right;
+  margin-right: 4%;
+}
 .modal-content {
   color: black;
+}
+@media(max-width:768px){
+    #login-dp{
+        background-color: inherit;
+        color: #fff;
+    }
+    #login-dp .bottom{
+        background-color: inherit;
+        border-top:0 none;
+    }
 }
