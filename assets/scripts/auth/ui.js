@@ -19,7 +19,8 @@ const signInSuccess = (data) => {
   $('#sign-in').trigger('reset')
   $('.sign-in').hide()
   $('.sign-out').show()
-//  $('.dropdown-menu').trigger('click')
+  // $('.dropdown-menu').trigger('click')
+  // $('.dropdown-menu').trigger('click')
   console.log(store.user)
 }
 
