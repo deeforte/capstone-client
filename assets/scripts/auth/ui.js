@@ -22,7 +22,6 @@ const signInSuccess = (data) => {
   $('.sign-out').show()
   // $('.dropdown-menu').trigger('click')
   // $('.dropdown-menu').trigger('click')
-  console.log(store.user)
 }
 
 const signInFailure = () => {
@@ -38,6 +37,9 @@ const signOutSuccess = (data) => {
   $('#beers').empty()
   $('#brewers').empty()
   $('.form-addBeer').trigger('reset')
+  $('#sign-up').trigger('reset')
+  $('#sign-in').trigger('reset')
+  $('#change-password').trigger('reset')
 }
 
 const signOutFailure = () => {
@@ -51,6 +53,7 @@ const chgPswdSuccess = () => {
 }
 
 const chgPswdFailure = () => {
+  $('#change-password').trigger('reset')
   $('#chgPswdFailure').modal('show')
   $('.dropdown-menu').trigger('click')
 //  console.error(error)

@@ -8,8 +8,6 @@ const getBeersSuccess = (data) => {
   const showBeersHTML = showBeersTemplate({
     beers: data.beers
   })
-  console.log('data beers is: ', data.beers)
-  console.log('beer ui store.user: ', store.user)
   $('#brewers').empty()
   $('#beers').empty()
   $('#beers').append(showBeersHTML)
@@ -17,8 +15,8 @@ const getBeersSuccess = (data) => {
   // $('#beer').show()
 }
 
-const getBeersFailure = (error) => {
-  console.log(error)
+const getBeersFailure = () => {
+  $('#getBeersSuccessFailure').modal('show')
 }
 
 const showBeersSuccess = (data) => {
@@ -26,8 +24,6 @@ const showBeersSuccess = (data) => {
   const showBrewersHTML = showBrewersTemplate({
     brewers: data.beers
   })
-  console.log('data beers is: ', data.beers)
-  console.log('beer ui store.user: ', store.user)
   $('#beers').empty()
   $('#brewers').empty()
   $('#brewers').append(showBrewersHTML)
@@ -35,26 +31,8 @@ const showBeersSuccess = (data) => {
   // $('#beer').show()
 }
 
-const showBeersFailure = (error) => {
-  console.log(error)
-}
-
-const getBeerSuccess = (data) => {
-  store.beer = data
-  console.log('in ui store.beer: ', store.beer)
-  // const showBeersHTML = showBeersTemplate({
-  //   beers: data.beers
-  // })
-  console.log('data beers is: ', data)
-  console.log('beer ui store.user: ', store.user)
-  // $('#beers').empty()
-  // $('#beers').append(showBeersHTML)
-  // $('#landing').hide()
-  // $('#beer').show()
-}
-
-const getBeerFailure = (error) => {
-  console.log(error)
+const showBeersFailure = () => {
+  $('#showBeersFailure').modal('show')
 }
 
 const newBeerSuccess = (beer) => {
@@ -95,7 +73,5 @@ module.exports = {
   updateBeerSuccess,
   updateBeerFailure,
   deleteBeerSuccess,
-  deleteBeerFailure,
-  getBeerSuccess,
-  getBeerFailure
+  deleteBeerFailure
 }
