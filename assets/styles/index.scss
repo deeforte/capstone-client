@@ -24,7 +24,7 @@ th {
 }
 
 .container-fluid {
-  background: url('http://i.imgur.com/weold6L.jpg');
+  background: url('http://i.imgur.com/bWo3NBg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -50,16 +50,26 @@ th {
 
 .navbar-brand {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  top: 0px;
 }
 
 .navbar {
   float: right;
-  margin-right: 4%;
+  height: 80px;
 }
 
 .modal-content {
   color: black;
+}
+
+#show-beers {
+  top: 20px;
+  height: 50px;
+}
+
+button {
+  height: 30px;
 }
 
 .errmsg {
@@ -70,6 +80,7 @@ th {
 .bottom {
   color: black;
 }
+
 @media(max-width:768px){
     #login-dp{
         background-color: inherit;

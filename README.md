@@ -61,11 +61,13 @@ Craft Beer Brewer
 ![alt text](http://i.imgur.com/Ss2Wm0K.jpg)
 
 
-## Pitch Deck
+## Pitch
 
-XXXXXXX
+As a craft beer enthusiast when I go to a restaurant I want to know what's on tap.  This app is in the tourism category and open to the public(no sign in necessary).   It is a site that travelers can check for a list of breweries in the area and what's on tap at a particular brewery.
+
+Brewers signup/signin to register their brewery and list their craft beers.
 
 
 ## Unsolved problems or hurdles
 
-XXXXXXX
+Improvements to styling.
