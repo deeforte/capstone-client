@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>What's on tap?</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid col-md-12">
+      <!--h1>What's on tap?<span> Boston</span></h1-->
+      <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <h1 class="navbar-brand">What's on tap?   </h1>
+        <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show brews in Boston</button>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- ***** start of login / sign-up drop down in NAV **** -->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+      <ul class="nav navbar-nav">
+        <li class="brewer dropdown">
+          <a href="#" class="dropdown-toggle" style="width: 180px" data-toggle="dropdown"><b>Brewer actions</b><span class="caret"></span></a>
+          <ul id="login-dp" class="dropdown-menu">
+            <li>
+              <div class="row sign-in">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-in">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" name="credentials[email]" class="form-control" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign-In</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  New brewers  <a href="#" class="linkSignUp"><b>Sign-Up</b></a>
+                </div>
+              </div>
+              <!-- END of SIGN-IN -->
+              <!-- Start of Sign-UP -->
+              <div class="row sign-up">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-up">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputEmail2">Email address</label>
+                      <input type="email" name="credentials[email]" class="form-control" id="exampleInputEmail2" placeholder="Email address" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Password</label>
+                      <input type="password" name="credentials[password]" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Confirm Password</label>
+                      <input type="password" name="credentials[password_confirmation]" class="form-control" id="exampleInputPassword2" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Sign-Up</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Already signed up? <a href="#" class="linkSignIn"><b>Sign-In</b></a>
+                </div>
+              </div>
+              <!-- End of Sign-up -->
+              <!-- start of Signout -->
+              <div class="row sign-out">
+                <div class="col-md-12">
+                  <div class="bottom text-center">
+                    <button type="button" class="btn btn-primary btn-block" id="brewer-button">Update my brews</button>
+                  </div>
+                  <div class="bottom text-center">
+                    <button type="button" class="linkChangePassword btn btn-primary btn-block">Change Password</button>
+                  </div>
+                  <div class="bottom text-center">
+                    <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="sign-out">
+                      <button type="submit" class="btn btn-primary btn-block">Sign Out</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <!-- end of Sign-out -->
+              <!-- Start of change password -->
+              <div class="row change-password">
+                <div class="col-md-12">
+                  <form class="form" role="form" method="post" action="login" accept-charset="UTF-8" id="change-password">
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">Old Password</label>
+                      <input type="password" name="passwords[old]" class="form-control" id="exampleInputPassword2" placeholder="Old Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="sr-only" for="exampleInputPassword2">New Password</label>
+                      <input type="password" name="passwords[new]" class="form-control" id="exampleInputPassword2" placeholder="New Password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-primary btn-block">Change Password</button>
+                    </div>
+                  </form>
+                </div>
+                <div class="bottom text-center">
+                  Brewer Actions <a href="#" class="linkBrewer"><b>Click here</b></a>
+                </div>
+              </div>
+              <!-- End of change password -->
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      <!-- /.navbar-collapse -->
+    </div>
+  </div>
+  <!-- end of DIV container -->
+</nav>
+<!--list of beers for not logged in-->
+<div class = "container">
+      <section class="list of beers" id="beers">
+      </section>
+<!--update view for brewers that are logged in-->
+      <section class="brewers view" id="brewers">
+      </section>
+<!--/div>
+  <div>
+    <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers</button>
+  </div-->
+</div>
+
+  <!-- ERROR MESSAGES -->
+<div class="container">
+  <div id="signUpFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Sign-Up was not successful!</h4>
+          <p>Email entered is already in use or passwords entered do not match.  Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="signInFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Sign-In Failed!</h4>
+          <p>Your email or password is incorrect. <br>Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="chgPswdFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Password Change Failed!</h4>
+          <p>Old password entered is incorrect. <br>Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="getBeersFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>No local brews!</h4>
+          <p>Encourage your brewers to join.<br>Thank you for visiting!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="showBeersFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>No brews for you!</h4>
+          <p>Add your craft beers here!<br>Thank you!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--errors end here-->
+<!--modals start here-->
+<!--upmodal start here-->
+    <div id="upModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">update beer</h4>
+          </div>
+          <div class="modal-body">
+            <p>Update your beer info here.</p>
+            <form class="form-updateBeer">
+            <div class="form-group">
+              <div class="form-group">
+                <label class="sr-only" for="beer-id">beer id</label>
+                <input type="hidden" name="beer[id]" id="beer-id">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-city">beer city</label>
+                <input type="hidden" name="beer[city]" id="beer-city" placeholder="city">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-beer">beer name</label>
+                <input type="text" name="beer[beer]" id="beer-beer" placeholder="name">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-brewery">beer brewery</label>
+                <input type="text" name="beer[brewery]" id="beer-brewery" placeholder="brewery">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-style">beer style</label>
+                <input type="text" name="beer[style]" id="beer-style" placeholder="style">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-description">description</label>
+                <input type="text" name="beer[description]" id="beer-description" placeholder="description">
+              </div>
+            <button type="submit" class="btn btn-default update-beer">update beer</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+        <!--- modal content ends-->
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--- up modal ends here-->
+<!--- add modal ends here-->
+<div id="addModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">add beer</h4>
+      </div>
+      <div class="modal-body">
+        <p>Add your beer info here.</p>
+        <form class="form-addBeer">
+          <div class="form-group">
+            <label class="sr-only" for="add-city">beer city</label>
+            <input type="text" name="beer[city]" id="add-city" placeholder="city">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-beer">beer name</label>
+            <input type="text" name="beer[beer]" id="add-beer" placeholder="name">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-brewery">beer brewery</label>
+            <input type="text" name="beer[brewery]" id="add-brewery" placeholder="brewery">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-style">beer style</label>
+            <input type="text" name="beer[style]" id="add-style" placeholder="style">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-description">description</label>
+            <input type="text" name="beer[description]" id="add-description" placeholder="description">
+          </div>
+          <button type="submit" class="btn btn-default add-beer">add beer</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+    <!--- modal content ends-->
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!---addmodal ends here-->
+    </body>
+</html>
