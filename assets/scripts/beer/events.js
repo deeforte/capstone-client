@@ -63,9 +63,9 @@ const addBeer = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   beerApi.create(data)
-  .then(beerUi.addBeerSuccess)
+  .then(beerUi.newBeerSuccess)
   .then(showBeers)
-  .catch(beerUi.addBeerFailure)
+  .catch(beerUi.newBeerFailure)
 }
 
 const addHandlers = () => {

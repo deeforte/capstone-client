@@ -20,7 +20,7 @@ const signInSuccess = (data) => {
   $('#sign-in').trigger('reset')
   $('.sign-in').hide()
   $('.sign-out').show()
-  // $('.dropdown-menu').trigger('click')
+  $('.dropdown-menu').trigger('click')
   // $('.dropdown-menu').trigger('click')
 }
 
@@ -53,9 +53,10 @@ const chgPswdSuccess = () => {
 }
 
 const chgPswdFailure = () => {
-  $('#change-password').trigger('reset')
   $('#chgPswdFailure').modal('show')
-  $('.dropdown-menu').trigger('click')
+  $('#change-password').trigger('reset')
+  $('.sign-out').show()
+  $('.change-password').hide()
 //  console.error(error)
 }
 
