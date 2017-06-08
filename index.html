@@ -209,29 +209,30 @@
             <form class="form-updateBeer">
             <div class="form-group">
               <div class="form-group">
-                <label class="sr-only" for="pwd">beer id</label>
+                <label class="sr-only" for="beer-id">beer id</label>
                 <input type="hidden" name="beer[id]" id="beer-id">
               </div>
-              <label class="sr-only" for="email">beer city</label>
-              <input type="text" name="beer[city]" id="beer-city" placeholder="city">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="pwd">beer name</label>
-              <input type="text" name="beer[beer]" id="beer-beer" placeholder="name">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="email">beer brewery</label>
-              <input type="text" name="beer[brewery]" id="beer-brewery" placeholder="brewery">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="pwd">beer style</label>
-              <input type="text" name="beer[style]" id="beer-style" placeholder="style">
-            </div>
-            <div class="form-group">
-              <label class="sr-only" for="pwd">description</label>
-              <input type="text" name="beer[description]" id="beer-description" placeholder="description">
-            </div>
-            <button type="submit" class="btn btn-default add-beer">update beer</button>
+              <div class="form-group">
+                <label class="sr-only" for="beer-city">beer city</label>
+                <input type="hidden" name="beer[city]" id="beer-city" placeholder="city">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-beer">beer name</label>
+                <input type="text" name="beer[beer]" id="beer-beer" placeholder="name">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-brewery">beer brewery</label>
+                <input type="text" name="beer[brewery]" id="beer-brewery" placeholder="brewery">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-style">beer style</label>
+                <input type="text" name="beer[style]" id="beer-style" placeholder="style">
+              </div>
+              <div class="form-group">
+                <label class="sr-only" for="beer-description">description</label>
+                <input type="text" name="beer[description]" id="beer-description" placeholder="description">
+              </div>
+            <button type="submit" class="btn btn-default update-beer">update beer</button>
             </form>
           </div>
           <div class="modal-footer">
@@ -241,6 +242,7 @@
         </div>
       </div>
     </div>
+  </div>
 <!--- up modal ends here-->
 <!--- add modal ends here-->
 <div id="addModal" class="modal fade" role="dialog">
@@ -254,27 +256,27 @@
       <div class="modal-body">
         <p>Add your beer info here.</p>
         <form class="form-addBeer">
-        <div class="form-group">
-          <label class="sr-only" for="email">beer city</label>
-          <input type="text" name="beer[city]" class="beer-city" placeholder="city">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="pwd">beer name</label>
-          <input type="text" name="beer[beer]" class="beer-beer" placeholder="name">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="email">beer brewery</label>
-          <input type="text" name="beer[brewery]" class="beer-brewery" placeholder="brewery">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="pwd">beer style</label>
-          <input type="text" name="beer[style]" class="beer-style" placeholder="style">
-        </div>
-        <div class="form-group">
-          <label class="sr-only" for="pwd">description</label>
-          <input type="text" name="beer[description]" class="beer-description" placeholder="description">
-        </div>
-        <button type="submit" class="btn btn-default add-beer">add beer</button>
+          <div class="form-group">
+            <label class="sr-only" for="add-city">beer city</label>
+            <input type="text" name="beer[city]" id="add-city" placeholder="city">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-beer">beer name</label>
+            <input type="text" name="beer[beer]" id="add-beer" placeholder="name">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-brewery">beer brewery</label>
+            <input type="text" name="beer[brewery]" id="add-brewery" placeholder="brewery">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-style">beer style</label>
+            <input type="text" name="beer[style]" id="add-style" placeholder="style">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="add-description">description</label>
+            <input type="text" name="beer[description]" id="add-description" placeholder="description">
+          </div>
+          <button type="submit" class="btn btn-default add-beer">add beer</button>
         </form>
       </div>
       <div class="modal-footer">
