@@ -50,15 +50,23 @@ th {
 
 .navbar-brand {
   color: white;
+  font-size: 20px;
 }
 
 .navbar {
   float: right;
   margin-right: 4%;
 }
+
 .modal-content {
   color: black;
 }
+
+.errmsg {
+  height: 100px;
+  width: 400px;
+}
+
 .bottom {
   color: black;
 }

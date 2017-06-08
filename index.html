@@ -18,21 +18,20 @@
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
+        <h2 class="navbar-brand">What's on tap?   </h2>
+        <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show brews in Boston</button>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- ***** start of login / sign-up drop down in NAV **** -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-      <h3 class="navbar-brand">What's on tap?   </a>
-      <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show brews in Boston</button>
-    <!--/div-->
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <!-- ***** start of login / sign-up drop down in NAV **** -->
       <ul class="nav navbar-nav">
         <li class="brewer dropdown">
-          <a href="#" class="dropdown-toggle" style="width: 200px" data-toggle="dropdown"><b>Brewer actions</b><span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" style="width: 180px" data-toggle="dropdown"><b>Brewer actions</b><span class="caret"></span></a>
           <ul id="login-dp" class="dropdown-menu">
             <li>
               <div class="row sign-in">
@@ -140,6 +139,41 @@
     <button type="button" id="show-beers" class="btn btn-primary btn-submit-fix">Show Beers</button>
   </div-->
 </div>
+
+  <!-- ERROR MESSAGES -->
+<div class="container">
+  <div id="signUpFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Sign-Up was not successful!</h4>
+          <p>Email entered is already in use or passwords entered do not match.  Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="signInFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Sign-In Failed!</h4>
+          <p>Your email or password is incorrect. <br>Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="chgPswdFailure" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content errmsg">
+        <div class="alert alert-danger alert-dismissible text-center" role="alert">
+          <h4>Password Change Failed!</h4>
+          <p>Old password entered is incorrect. <br>Please try again!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--errors end here-->
 <!--modals start here-->
 <!--upmodal start here-->
     <div id="upModal" class="modal fade" role="dialog">

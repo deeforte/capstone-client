@@ -12,6 +12,7 @@ const signUpSuccess = () => {
 const signUpFailure = () => {
   $('#sign-up').trigger('reset')
   $('.dropdown-menu').trigger('click')
+  $('#signUpFailure').modal('show')
 }
 
 const signInSuccess = (data) => {
@@ -26,6 +27,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = () => {
   $('#sign-in').trigger('reset')
+  $('#signInFailure').modal('show')
   $('.dropdown-menu').trigger('click')
 }
 
@@ -49,6 +51,7 @@ const chgPswdSuccess = () => {
 }
 
 const chgPswdFailure = () => {
+  $('#chgPswdFailure').modal('show')
   $('.dropdown-menu').trigger('click')
 //  console.error(error)
 }
